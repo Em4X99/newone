@@ -18,6 +18,13 @@ public class GameManager : MonoBehaviour
     //Make a queue for students
     //queue is FIFO (First in First OUt)
     public Queue<string> stuQueue = new Queue<string>();
+
+    //make an ArrayList
+    public ArrayList stuff = new ArrayList();   
+
+
+
+
     void Start()
     {
         students[6] = stu1;
@@ -28,11 +35,17 @@ public class GameManager : MonoBehaviour
 
         //fllist.AddRange(floor);
         //add every student inside the list stulist to my stack
+        stuff.Add(stu1);
+        stuff.Add(15);
+        stuff.Add(this.gameObject);
+
+
         foreach (string s in stuList)
         {
             stuStack.Push(s);   
         }
         Debug.Log(stuStack.Pop());
+        Debug.Log(stuff[2].GetType().Name);
     }
 
     // Update is called once per frame
